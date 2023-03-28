@@ -60,6 +60,12 @@ services:
   #   depends_on:
   #   - redis
   #   - catalogue
+   cart:
+     image : cart:v1
+     container_name: cart 
+     depends_on:
+      -redis
+      -catalogue  
   # mysql:
   #   image: mysql:v1
   #   container_name: mysql
