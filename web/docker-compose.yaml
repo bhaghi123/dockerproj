@@ -66,16 +66,16 @@ services:
   #    depends_on:
   #     -redis
   #     -catalogue  
-  # mysql:
-  #   image: mysql:v1
-  #   container_name: mysql
+  mysql:
+    image: mysql:v1
+    container_name: mysql
   #   volumes:
   #   - mysql:/var/lib/mysql
-  # shipping:
-  #   image: shipping:v1
-  #   container_name: shipping
-  #   depends_on:
-  #   - mysql
+  shipping:
+    image: shipping:v1
+    container_name: shipping
+    depends_on:
+    - mysql
   # rabbitmq:
   #   image: rabbitmq
   #   container_name: rabbitmq
