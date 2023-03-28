@@ -37,8 +37,6 @@ services:
     - "80:80"
     depends_on:
     - catalogue
-    - user
-    - cart
   mongodb:
     image: mongodb:v1
     container_name: mongodb
