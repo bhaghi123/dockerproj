@@ -41,10 +41,11 @@ services:
     - cart
     - mysql
     - shipping
-
   mongodb:
     image: mongodb:v1
     container_name: mongodb
+    # volumes:
+    # - mongodb:/data/db
   catalogue:
     image: catalogue:v1
     container_name: catalogue
@@ -53,6 +54,8 @@ services:
   redis:
     image: redis
     container_name: redis
+    # volumes:
+    # - redis:/data
   user:
     image: user:v1
     container_name: user
@@ -65,17 +68,11 @@ services:
     depends_on:
     - redis
     - catalogue
-  #  cart:
-  #    image : cart:v1
-  #    container_name: cart 
-  #    depends_on:
-  #     -redis
-  #     -catalogue  
   mysql:
     image: mysql:v1
     container_name: mysql
-  #   volumes:
-  #   - mysql:/var/lib/mysql
+    # volumes:
+    # - mysql:/var/lib/mysql
   shipping:
     image: shipping:v1
     container_name: shipping
@@ -84,8 +81,8 @@ services:
   rabbitmq:
     image: rabbitmq
     container_name: rabbitmq
-  #   volumes:
-  #   - rabbitmq:/var/lib/rabbitmq
+    # volumes:
+    # - rabbitmq:/var/lib/rabbitmq
   payment:
     image: payment:v1
     container_name: payment
